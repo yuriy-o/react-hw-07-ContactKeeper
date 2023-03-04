@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';

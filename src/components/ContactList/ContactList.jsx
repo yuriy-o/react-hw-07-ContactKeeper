@@ -35,7 +35,6 @@ export const ContactList = () => {
 const Contact = ({ contact, onDeleteContact }) => {
   const { id, name, phone } = contact;
 
-  console.log('contact', contact);
   return (
     <Li>
       <GridWrapper>
