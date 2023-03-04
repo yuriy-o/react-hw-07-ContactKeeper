@@ -35,7 +35,8 @@ const phonebookSlice = createSlice({
     [fetchContacts.rejected]: handleRejected,
     [addContact.pending]: handleRejected,
     [addContact.fulfilled]: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload.id);
+      state.items.unshift(action.payload);
+      // state.items = state.items.filter(item => item.id !== action.payload.id);
       state.isLoading = false;
       state.error = null;
     },

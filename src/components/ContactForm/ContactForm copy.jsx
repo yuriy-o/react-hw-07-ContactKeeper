@@ -24,7 +24,7 @@ const Schema = Yup.object().shape({
       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     )
     .required(),
-  phone: Yup.string()
+  number: Yup.string()
     // .min(4)
     // .max(4)
     .matches(
@@ -41,11 +41,11 @@ export const ContactForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     resetForm();
 
-    const { name, phone } = values;
+    const { name, number } = values;
 
     const contact = {
       name,
-      phone,
+      number,
     };
 
     const dublicateContact = findDublicateContact(contact, contacts);
@@ -63,7 +63,7 @@ export const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: '', phone: '' }}
+      initialValues={{ name: '', number: '' }}
       onSubmit={handleSubmit}
       validationSchema={Schema}
     >
@@ -81,7 +81,7 @@ export const ContactForm = () => {
 
         <Label>
           <Span>Number</Span>
-          <Field name="phone" required>
+          <Field name="number" required>
             {({ field }) => (
               <InputMaskWrapper
                 {...field}
@@ -92,7 +92,7 @@ export const ContactForm = () => {
             )}
           </Field>
 
-          <Error component="span" name="phone" />
+          <Error component="span" name="number" />
         </Label>
 
         <Button type="submit">Add contact</Button>

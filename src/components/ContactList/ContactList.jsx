@@ -33,12 +33,14 @@ export const ContactList = () => {
 };
 
 const Contact = ({ contact, onDeleteContact }) => {
-  const { id, name, number } = contact;
+  const { id, name, phone } = contact;
+
+  console.log('contact', contact);
   return (
     <Li>
       <GridWrapper>
         <Name>{name}:</Name>
-        <Number>{number}</Number>
+        <Number>{phone}</Number>
       </GridWrapper>
 
       <Button onClick={() => onDeleteContact(id)} type="button">
