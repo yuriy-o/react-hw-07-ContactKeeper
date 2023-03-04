@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -25,6 +26,7 @@ export const App = () => {
       <H2>Contacts</H2>
       <ContactsFilter />
       {isLoading && !error && <p>Request in progress...</p>}
+      {isLoading && !error && <PacmanLoader color="#3a7999" />}
       <ContactList />
     </Container>
   );

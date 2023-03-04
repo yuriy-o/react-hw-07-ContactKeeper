@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-//! import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -39,6 +39,7 @@ const phonebookSlice = createSlice({
       // state.items = state.items.filter(item => item.id !== action.payload.id);
       state.isLoading = false;
       state.error = null;
+      toast.success('🦄 Contact created!');
     },
     [addContact.rejected]: handleRejected,
     [deleteContact.pending]: handlePending,
@@ -53,20 +54,3 @@ const phonebookSlice = createSlice({
 
 export const { filterChange } = phonebookSlice.actions;
 export const PhonebookReducer = phonebookSlice.reducer;
-
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-// };
-
-// const phonebookReducer = persistReducer(persistConfig, phonebookSlice.reducer);
-
-// export const { addContact, removeContact, filterChange } =
-//   phonebookSlice.actions;
-
-// export const { fetchingInProgress, fetchingSuccess, fetchingError } =
-//   phonebookSlice.actions;
-
-// export default phonebookReducer;
-
-// export const tasksReducer = phonebookSlice.reducer;
