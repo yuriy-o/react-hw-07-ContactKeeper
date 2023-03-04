@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import PacmanLoader from 'react-spinners/PacmanLoader';
+import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -20,14 +22,28 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <H1>Phonebook</H1>
-      <ContactForm />
-      <H2>Contacts</H2>
-      <ContactsFilter />
-      {isLoading && !error && <p>Request in progress...</p>}
-      {isLoading && !error && <PacmanLoader color="#3a7999" />}
-      <ContactList />
-    </Container>
+    <>
+      <Container>
+        <H1>Phonebook</H1>
+        <ContactForm />
+        <H2>Contacts</H2>
+        <ContactsFilter />
+        {isLoading && !error && <p>Request in progress...</p>}
+        {isLoading && !error && <PacmanLoader color="#3a7999" />}
+        <ContactList />
+      </Container>
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </>
   );
 };
