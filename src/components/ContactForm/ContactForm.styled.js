@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-// import MaskedInput from 'react-text-mask';
 import { Form, Field, ErrorMessage } from 'formik';
-// import InputMask from 'react-input-mask';
 import ReactInputMask from 'react-input-mask';
 
 export const FormStyle = styled(Form)`
