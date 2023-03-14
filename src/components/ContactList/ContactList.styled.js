@@ -34,6 +34,7 @@ export const GridWrapper = styled.div`
   grid-template-columns: 1.05fr 1fr;
   grid-template-rows: auto;
   grid-column-gap: 15px;
+  width: 70%;
 `;
 
 export const Name = styled.p`
