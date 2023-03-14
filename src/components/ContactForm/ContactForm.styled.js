@@ -21,7 +21,7 @@ export const Span = styled.span`
 
 export const Input = styled(Field)`
   margin-bottom: 10px;
-  width: 97%;
+  width: 100%;
   height: 30px;
   font-size: 20px;
 
@@ -33,7 +33,7 @@ export const Input = styled(Field)`
 
 export const InputMaskWrapper = styled(ReactInputMask)`
   margin-bottom: 10px;
-  width: 97%;
+  width: 100%;
   height: 30px;
   font-size: 20px;
 
