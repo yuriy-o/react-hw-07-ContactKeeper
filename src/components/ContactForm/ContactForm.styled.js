@@ -68,3 +68,13 @@ export const Error = styled(ErrorMessage)`
   color: red;
   margin-bottom: 5px;
 `;
+export const Hr = styled.div`
+  border: 0;
+  height: 2px;
+  background-color: #3a7999;
+  width: 600px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: -50px;
+`;

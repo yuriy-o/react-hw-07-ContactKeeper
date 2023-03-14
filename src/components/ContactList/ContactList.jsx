@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { getContacts, getFilter } from 'redux/selectors';
 
-import { Button, GridWrapper, Li, Name, Number } from './ContactList.styled';
+import { GridWrapper, Li, Name, Number } from './ContactList.styled';
+import './ContactList.css';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -42,9 +43,19 @@ const Contact = ({ contact, onDeleteContact }) => {
         <Number>{phone}</Number>
       </GridWrapper>
 
-      <Button onClick={() => onDeleteContact(id)} type="button">
+      {/* old style button */}
+      {/* <Button onClick={() => onDeleteContact(id)} type="button">
         Delete
-      </Button>
+      </Button> */}
+
+      <button
+        className="btn-delete btn-rotating"
+        onClick={() => onDeleteContact(id)}
+        type="button"
+      >
+        <span>Are you sure?</span>
+        <span>Delete</span>
+      </button>
     </Li>
   );
 };
