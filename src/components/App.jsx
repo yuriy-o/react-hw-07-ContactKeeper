@@ -23,7 +23,7 @@ export const App = () => {
   return (
     <>
       <Container>
-        <H1>Phonebook</H1>
+        <H1>ContactKeeper</H1>
         <ContactForm />
         <H2>Contacts</H2>
         <ContactsFilter />
